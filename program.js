@@ -6,6 +6,9 @@ var extrovert_score = 0
 var design_score = 0
 var qa_score = 0
 var data_score = 0
+var devops_score = 0
+var front_end = design_score +
+
 
 $("#clientquestion").submit(function(event){
   event.preventDefault();
@@ -19,10 +22,6 @@ $("#clientquestion").submit(function(event){
     $("#designquestion").toggle(display= true);
     extrovert_score +=1;
   }
-  console.log("extrovert "+ extrovert_score);
-  console.log("design " + design_score);
-  console.log("QA " + qa_score);
-  console.log("Data Score " + data_score);
 });
 
 $("#designquestion").submit(function(event){
@@ -38,10 +37,6 @@ $("#designquestion").submit(function(event){
     $("#editquestion").toggle(display= true);
     design_score +=1;
   }
-  console.log("extrovert "+ extrovert_score);
-  console.log("design " + design_score);
-  console.log("QA " + qa_score);
-  console.log("Data Score " + data_score);
 });
 
 $("#editquestion").submit(function(event){
@@ -57,10 +52,6 @@ $("#editquestion").submit(function(event){
     $("#databasequestion").toggle(display= true);
     qa_score +=1
   }
-  console.log("extrovert "+ extrovert_score);
-  console.log("design " + design_score);
-  console.log("QA " + qa_score);
-  console.log("Data Score " + data_score);
 });
 
 $("#databasequestion").submit(function(event){
@@ -74,11 +65,6 @@ $("#databasequestion").submit(function(event){
   } else if(document.getElementById('databaseidk').checked){
     // display resources
   }
-  console.log("extrovert "+ extrovert_score);
-  console.log("design " + design_score);
-  console.log("QA " + qa_score);
-  console.log("Data Score " + data_score);
-
 });
 
 $("#partyquestion").submit(function(event){
@@ -90,8 +76,42 @@ $("#partyquestion").submit(function(event){
   } else {
     extrovert_score +=1
   }
+});
+
+$("#artquestion").submit(function(event){
+  event.preventDefault();
+  $("#artquestion").toggle(display= false);
+  if(document.getElementById('artyes').checked){
+    design_score +=2
+  }else if(document.getElementById('artno').checked){
+  } else {
+    design_score +=1
+  }
+});
+
+$("#collaborationquestion").submit(function(event){
+  event.preventDefault();
+  $("#collaborationquestion").toggle(display= false);
+  if(document.getElementById('collaborationyes').checked){
+    devops_score +=2
+  }else if(document.getElementById('collaborationno').checked){
+  } else {
+    devops_score +=1
+  }
+});
+
+$("#visualquestion").submit(function(event){
+  event.preventDefault();
+  $("#visualquestion").toggle(display= false);
+  if(document.getElementById('visualyes').checked){
+    design_score +=2
+  }else if(document.getElementById('visualno').checked){
+  } else {
+    design_score +=1
+  }
   console.log("extrovert "+ extrovert_score);
   console.log("design " + design_score);
   console.log("QA " + qa_score);
   console.log("Data Score " + data_score);
+  console.log("DevOps Score " + devops_score);
 });
