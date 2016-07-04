@@ -3,12 +3,14 @@ $(document).ready(function(){
 })
 
 var extrovert_score = 0
+var code_score = 0
 var design_score = 0
 var qa_score = 0
 var data_score = 0
 var devops_score = 0
-var front_end = design_score +
-
+var front_end = design_score + extrovert_score + code_score
+var back_end = qa_score + code_score
+var tech_support = extrovert_score + code_score
 
 $("#clientquestion").submit(function(event){
   event.preventDefault();
@@ -47,7 +49,6 @@ $("#editquestion").submit(function(event){
     qa_score +=2
   }else if(document.getElementById('editno').checked){
     $("#databasequestion").toggle(display= true);
-    console.log(extrovert_score)
   } else {
     $("#databasequestion").toggle(display= true);
     qa_score +=1
@@ -109,9 +110,44 @@ $("#visualquestion").submit(function(event){
   } else {
     design_score +=1
   }
+});
+
+$("#finaltally").submit(function(event){
   console.log("extrovert "+ extrovert_score);
   console.log("design " + design_score);
   console.log("QA " + qa_score);
   console.log("Data Score " + data_score);
   console.log("DevOps Score " + devops_score);
+  console.log("Front End Score " + front_end);
+  event.preventDefault();
+  if (design_score > qa_score &&
+      design_score > data_score &&
+      design_score > devops_score &&
+      design_score > front_end &&
+      design_score > back_end &&
+      design_score > tech_support){
+    console.log("You should consider a career as a web designer!")
+  } else if (qa_score > design_score &&
+      qa_score > data_score &&
+      qa_score > devops_score &&
+      qa_score > front_end &&
+      qa_score > back_end &&
+      qa_score > tech_support){
+    console.log("You should consider a career in QA!")
+  } else if (data_score > design_score &&
+      data_score >  qa_score &&
+      data_score > devops_score &&
+      data_score > front_end &&
+      data_score > back_end &&
+      data_score > tech_support){
+    console.log("You should consider a career in QA!")
+
+  } else {
+    console.log("test functioned")
+  }
 });
+
+
+// if (front_end == ){
+//   console.log("You should consider a career as a front end developer!")
+// };
