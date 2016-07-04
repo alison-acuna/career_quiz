@@ -120,28 +120,55 @@ $("#finaltally").submit(function(event){
   console.log("DevOps Score " + devops_score);
   console.log("Front End Score " + front_end);
   event.preventDefault();
-  if (design_score > qa_score &&
-      design_score > data_score &&
-      design_score > devops_score &&
-      design_score > front_end &&
-      design_score > back_end &&
-      design_score > tech_support){
+  if (design_score >= qa_score &&
+      design_score >= data_score &&
+      design_score >= devops_score &&
+      design_score >= front_end &&
+      design_score >= back_end &&
+      design_score >= tech_support){
     console.log("You should consider a career as a web designer!")
-  } else if (qa_score > design_score &&
-      qa_score > data_score &&
-      qa_score > devops_score &&
-      qa_score > front_end &&
-      qa_score > back_end &&
-      qa_score > tech_support){
+  } else if (qa_score >= design_score &&
+      qa_score >= data_score &&
+      qa_score >= devops_score &&
+      qa_score >= front_end &&
+      qa_score >= back_end &&
+      qa_score >= tech_support){
     console.log("You should consider a career in QA!")
-  } else if (data_score > design_score &&
-      data_score >  qa_score &&
-      data_score > devops_score &&
-      data_score > front_end &&
-      data_score > back_end &&
-      data_score > tech_support){
-    console.log("You should consider a career in QA!")
-
+  } else if (data_score >= design_score &&
+      data_score >=  qa_score &&
+      data_score >= devops_score &&
+      data_score >= front_end &&
+      data_score >= back_end &&
+      data_score >= tech_support){
+    console.log("You should consider a career as a database engineer!")
+  } else if (devops_score >= design_score &&
+      devops_score >=  qa_score &&
+      devops_score >= data_score &&
+      devops_score >= front_end &&
+      devops_score >= back_end &&
+      devops_score >= tech_support){
+    console.log("You should consider a career in Dev Ops!")
+  } else if (front_end >= design_score &&
+      front_end >=  qa_score &&
+      front_end >= data_score &&
+      front_end >= devops_score &&
+      front_end >= back_end &&
+      front_end >= tech_support){
+    console.log("You should consider a career as a Front End Developer!")
+  } else if (back_end >= design_score &&
+      back_end >=  qa_score &&
+      back_end >= data_score &&
+      back_end >= devops_score &&
+      back_end >= front_end &&
+      back_end >= tech_support){
+    console.log("You should consider a career as a Front End Developer!")
+  } else if (tech_support >= design_score &&
+      tech_support >=  qa_score &&
+      tech_support >= data_score &&
+      tech_support >= devops_score &&
+      tech_support >= front_end &&
+      tech_support >= back_end){
+    console.log("You should consider a career as a Front End Developer!")
   } else {
     console.log("test functioned")
   }
