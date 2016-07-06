@@ -8,9 +8,6 @@ var design_score = 0
 var qa_score = 0
 var data_score = 0
 var devops_score = 0
-var front_end = design_score + extrovert_score + code_score
-var back_end = qa_score + code_score
-var tech_support = extrovert_score + code_score
 
 $("#clientquestion").submit(function(event){
   event.preventDefault();
@@ -112,14 +109,18 @@ $("#visualquestion").submit(function(event){
   }
 });
 
+
 $("#finaltally").submit(function(event){
+  event.preventDefault();
+  var front_end = design_score + extrovert_score + code_score
+  var back_end = qa_score + code_score
+  var tech_support = extrovert_score + code_score
   console.log("extrovert "+ extrovert_score);
   console.log("design " + design_score);
   console.log("QA " + qa_score);
   console.log("Data Score " + data_score);
   console.log("DevOps Score " + devops_score);
   console.log("Front End Score " + front_end);
-  event.preventDefault();
   if (design_score >= qa_score &&
       design_score >= data_score &&
       design_score >= devops_score &&
@@ -175,6 +176,5 @@ $("#finaltally").submit(function(event){
 });
 
 
-// if (front_end == ){
-//   console.log("You should consider a career as a front end developer!")
-// };
+// NS:  Fix composite var and add you might also consider  these profesions with
+// these scores - option
