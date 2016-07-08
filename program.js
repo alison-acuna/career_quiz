@@ -56,33 +56,27 @@ $("#databasequestion").submit(function(event){
   event.preventDefault();
   $("#databasequestion").toggle(display= false);
   if(document.getElementById('databaseyes').checked){
-    $("#partyquestion").toggle(display= true);
+    $("#visualquestion").toggle(display= true);
     data_score +=2
   }else if(document.getElementById('databasena').checked){
+    $("#visualquestion").toggle(display= true);
     data_score +=1
   } else if(document.getElementById('databaseidk').checked){
+    $("#visualquestion").toggle(display= true);
     // display resources
   }
 });
 
-$("#partyquestion").submit(function(event){
+$("#visualquestion").submit(function(event){
   event.preventDefault();
-  $("#partyquestion").toggle(display= false);
-  if(document.getElementById('partyyes').checked){
-    extrovert_score +=2
-  }else if(document.getElementById('partyno').checked){
-  } else {
-    extrovert_score +=1
-  }
-});
-
-$("#artquestion").submit(function(event){
-  event.preventDefault();
-  $("#artquestion").toggle(display= false);
-  if(document.getElementById('artyes').checked){
+  $("#visualquestion").toggle(display= false);
+  if(document.getElementById('visualyes').checked){
+    $("#collaborationquestion").toggle(display= true);
     design_score +=2
-  }else if(document.getElementById('artno').checked){
+  }else if(document.getElementById('visualno').checked){
+    $("#collaborationquestion").toggle(display= true);
   } else {
+    $("#collaborationquestion").toggle(display= true);
     design_score +=1
   }
 });
@@ -97,18 +91,6 @@ $("#collaborationquestion").submit(function(event){
     devops_score +=1
   }
 });
-
-$("#visualquestion").submit(function(event){
-  event.preventDefault();
-  $("#visualquestion").toggle(display= false);
-  if(document.getElementById('visualyes').checked){
-    design_score +=2
-  }else if(document.getElementById('visualno').checked){
-  } else {
-    design_score +=1
-  }
-});
-
 
 $("#finaltally").submit(function(event){
   event.preventDefault();
