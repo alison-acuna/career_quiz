@@ -56,28 +56,30 @@ $("#databasequestion").submit(function(event){
   event.preventDefault();
   $("#databasequestion").toggle(display= false);
   if(document.getElementById('databaseyes').checked){
-    $("#visualquestion").toggle(display= true);
+    $("#backquestion").toggle(display= true);
     data_score +=2
   }else if(document.getElementById('databasena').checked){
-    $("#visualquestion").toggle(display= true);
+    $("#backquestion").toggle(display= true);
     data_score +=1
   } else if(document.getElementById('databaseidk').checked){
-    $("#visualquestion").toggle(display= true);
+    $("#backquestion").toggle(display= true);
     // display resources
+  } else {
+    $("#backquestion").toggle(display= true);
   }
 });
 
-$("#visualquestion").submit(function(event){
+$("#backquestion").submit(function(event){
   event.preventDefault();
-  $("#visualquestion").toggle(display= false);
-  if(document.getElementById('visualyes').checked){
+  $("#backquestion").toggle(display= false);
+  if(document.getElementById('backyes').checked){
     $("#collaborationquestion").toggle(display= true);
-    design_score +=2
-  }else if(document.getElementById('visualno').checked){
+    code_score +=2
+  }else if(document.getElementById('backno').checked){
     $("#collaborationquestion").toggle(display= true);
   } else {
     $("#collaborationquestion").toggle(display= true);
-    design_score +=1
+    code_score +=1
   }
 });
 
@@ -85,75 +87,80 @@ $("#collaborationquestion").submit(function(event){
   event.preventDefault();
   $("#collaborationquestion").toggle(display= false);
   if(document.getElementById('collaborationyes').checked){
+    $("#frontquestion").toggle(display= true);
     devops_score +=2
   }else if(document.getElementById('collaborationno').checked){
+    $("#frontquestion").toggle(display= true);
   } else {
+    $("#frontquestion").toggle(display= true);
     devops_score +=1
+  }
+});
+
+$("#frontquestion").submit(function(event){
+  event.preventDefault();
+  $("#frontquestion").toggle(display= false);
+  if(document.getElementById('frontyes').checked){
+    code_score +=2
+  }else if(document.getElementById('frontno').checked){
+  } else {
+    code_score +=1
   }
 });
 
 $("#finaltally").submit(function(event){
   event.preventDefault();
-  var front_end = design_score + extrovert_score + code_score
+  var designer = design_score + 2
+  var front_end = design_score + code_score
   var back_end = qa_score + code_score
   var tech_support = extrovert_score + code_score
-  if (design_score >= qa_score &&
-      design_score >= data_score &&
-      design_score >= devops_score &&
-      design_score >= front_end &&
-      design_score >= back_end &&
-      design_score >= tech_support){
+  var database = data_score + 2
+  var qa = qa_score + 2
+
+  console.log(designer)
+  if (designer >= qa &&
+      designer >= database &&
+      designer >= front_end &&
+      designer >= back_end &&
+      designer >= tech_support){
     document.getElementById('results').innerHTML = "You should consider a career as a web designer!"
-  } else if (qa_score >= design_score &&
-      qa_score >= data_score &&
-      qa_score >= devops_score &&
-      qa_score >= front_end &&
-      qa_score >= back_end &&
-      qa_score >= tech_support){
+  } else if (qa >= designer &&
+      qa >= database &&
+      qa >= front_end &&
+      qa >= back_end &&
+      qa >= tech_support){
     document.getElementById('results').innerHTML = "You should consider a career in QA!"
-  } else if (data_score >= design_score &&
-      data_score >=  qa_score &&
-      data_score >= devops_score &&
-      data_score >= front_end &&
-      data_score >= back_end &&
-      data_score >= tech_support){
+  } else if (database >= designer &&
+      database >=  qa &&
+      database >= front_end &&
+      database >= back_end &&
+      database >= tech_support){
     document.getElementById('results').innerHTML = "You should consider a career as a database engineer!"
-  } else if (devops_score >= design_score &&
-      devops_score >=  qa_score &&
-      devops_score >= data_score &&
-      devops_score >= front_end &&
-      devops_score >= back_end &&
-      devops_score >= tech_support){
-    document.getElementById('results').innerHTML = "You should consider a career in Dev Ops!"
-  } else if (front_end >= design_score &&
-      front_end >=  qa_score &&
-      front_end >= data_score &&
-      front_end >= devops_score &&
+  } else if (front_end >= designer &&
+      front_end >=  qa &&
+      front_end >= database &&
       front_end >= back_end &&
       front_end >= tech_support){
     document.getElementById('results').innerHTML = "You should consider a career as a Front End Developer!"
-  } else if (back_end >= design_score &&
-      back_end >=  qa_score &&
-      back_end >= data_score &&
-      back_end >= devops_score &&
+  } else if (back_end >= designer &&
+      back_end >=  qa &&
+      back_end >= database &&
       back_end >= front_end &&
       back_end >= tech_support){
-    document.getElementById('results').innerHTML = "You should consider a career as a Front End Developer!"
-  } else if (tech_support >= design_score &&
-      tech_support >=  qa_score &&
-      tech_support >= data_score &&
-      tech_support >= devops_score &&
+    document.getElementById('results').innerHTML = "You should consider a career as a Full Stack Developer!"
+  } else if (tech_support >= designer &&
+      tech_support >=  qa &&
+      tech_support >= database &&
       tech_support >= front_end &&
       tech_support >= back_end){
-    document.getElementById('results').innerHTML = "You should consider a career as a Front End Developer!"
+    document.getElementById('results').innerHTML = "You should consider a career in Tech Support!"
   } else {
     console.log("test functioned")
   }
   document.getElementById('deepresults').innerHTML = "Here are your scores.  If you have some other high scoring options, consider exploring those as well!"
-  document.getElementById('design').innerHTML = " Design Score: " + design_score
-  document.getElementById('qa').innerHTML = " QA Score: " + qa_score
-  document.getElementById('db').innerHTML = " Data Score: " + data_score
-  document.getElementById('devops').innerHTML = " DevOps Score: " + devops_score
+  document.getElementById('design').innerHTML = " Design Score: " + designer
+  document.getElementById('qa').innerHTML = " QA Score: " + qa
+  document.getElementById('db').innerHTML = " Data Score: " + database
   document.getElementById('frontend').innerHTML = " Front End Score: " + front_end
 });
 
