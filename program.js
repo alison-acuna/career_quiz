@@ -101,9 +101,12 @@ $("#frontquestion").submit(function(event){
   event.preventDefault();
   $("#frontquestion").toggle(display= false);
   if(document.getElementById('frontyes').checked){
+    $("#finaltally").toggle(display= true);
     code_score +=2
   }else if(document.getElementById('frontno').checked){
+    $("#finaltally").toggle(display= true);
   } else {
+    $("#finaltally").toggle(display= true);
     code_score +=1
   }
 });
@@ -112,6 +115,7 @@ $("#frontquestion").submit(function(event){
 $("#finaltally").submit(function(event){
   event.preventDefault();
   console.log(designer)
+  $("#finaltally").toggle(display= false);
   var designer = design_score + 2
   var front_end = design_score + code_score
   var back_end = qa_score + code_score
