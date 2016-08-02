@@ -4,6 +4,8 @@
     <link href='https://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
   </head>
 <body>
   <header>
@@ -11,94 +13,113 @@
     <h1> Find you Path in Tech </h1>
   </header>
   <h4> Answer the the following questions for recommendations about which path to follow in tech. </h4>
-  <div class="content">
-    <div class="checkbox">
-      <form id="clientquestion">
-        Do you want to work directly with clients? <br>
-        <input type="radio" name="client" id="clientyes" value="yes"> Yes <br>
-        <input type="radio" name="client" id="clientno" value="no"> No <br>
-        <input type="radio" name="client" id="clientna" value="na"> I don't care <br>
-        <input type="submit" value="Submit"><br>
-      </form>
-    <br>
-    <form id="designquestion" class="setpage">
-      Do you enjoy design? <br>
-      <input type="radio" name="design" id="designyes" value="yes"> Yes <br>
-      <input type="radio" name="design" id="designno" value="no"> No <br>
-      <input type="radio" name="design" id="designna" value="na"> I don't care <br>
-      <input type="submit" value="Submit"><br>
-    </form>
-    <form id="editquestion" class="setpage">
-      Do you enjoy editing? <br>
-      <input type="radio" name="edit" id="edityes" value="yes"> Yes <br>
-      <input type="radio" name="edit" id="editno" value="no"> No <br>
-      <input type="radio" name="edit" id="editna" value="na"> I don't care <br>
-      <input type="submit" value="Submit"><br>
-    </form>
-    <form id="databasequestion" class="setpage">
-      Do you enjoy working with databases? <br>
-      <input type="radio" name="db" id="databaseyes" value="yes"> Yes <br>
-      <input type="radio" name="db" id="databaseno" value="no"> No <br>
-      <input type="radio" name="db" id="databasena" value="na"> I don't care <br>
-      <input type="radio" name="db" id="databaseidk" value="idk"> I don't know <br>
-      <input type="submit" value="Submit"><br>
-    </form>
-    <form id="collaborationquestion" class="setpage">
-      Are you good at building consensus or collaboration? <br>
-      <input type="radio" name="collaboration" id="collaborationyes" value="yes"> Yes <br>
-      <input type="radio" name="collaboration" id="collaborationno" value="no"> No <br>
-      <input type="radio" name="collaboration" id="collaborationna" value="na"> I don't care <br>
-      <input type="submit" value="Submit"><br>
-    </form>
-    <form id="backquestion" class="setpage">
-      Do you enjoy working with back end languages like Python, Ruby, or PHP? <br>
-      <input type="radio" name="back" id="backyes" value="yes"> Yes <br>
-      <input type="radio" name="back" id="backno" value="no"> No <br>
-      <input type="radio" name="back" id="backna" value="na"> I don't care <br>
-      <input type="submit" value="Submit"><br>
-    </form>
-    <form id="frontquestion" class="setpage">
-      Do you like working with front end languages - HTML, CSS, and Javascript? <br>
-      <input type="radio" name="front" id="frontyes" value="yes"> Yes <br>
-      <input type="radio" name="front" id="frontno" value="no"> No <br>
-      <input type="radio" name="front" id="frontna" value="na"> I don't care <br>
-      <input type="submit" value="Submit"><br>
-    </form>
-    <form id="finaltally" class="setpage">
-      Are you ready to see your results? <br>
-      <input type="submit" value="Yes!"><br>
-    </form>
-    <div id="results"></div>
-    <div id="deepresults">
+  <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="content">
+      <div class="checkbox">
+          <form id="clientquestion">
+            Do you want to work directly with clients? <br>
+            <input type="radio" name="client" id="clientyes" value="yes"> Yes <br>
+            <input type="radio" name="client" id="clientno" value="no"> No <br>
+            <input type="radio" name="client" id="clientna" value="na"> I don't care <br>
+            <input type="submit" value="Submit"><br>
+          </form>
+        <br>
+        <form id="designquestion" class="setpage">
+          Do you enjoy design? <br>
+          <input type="radio" name="design" id="designyes" value="yes"> Yes <br>
+          <input type="radio" name="design" id="designno" value="no"> No <br>
+          <input type="radio" name="design" id="designna" value="na"> I don't care <br>
+          <input type="submit" value="Submit"><br>
+        </form>
+        <form id="editquestion" class="setpage">
+          Do you enjoy editing? <br>
+          <input type="radio" name="edit" id="edityes" value="yes"> Yes <br>
+          <input type="radio" name="edit" id="editno" value="no"> No <br>
+          <input type="radio" name="edit" id="editna" value="na"> I don't care <br>
+          <input type="submit" value="Submit"><br>
+        </form>
+        <form id="databasequestion" class="setpage">
+          Do you enjoy working with databases? <br>
+          <input type="radio" name="db" id="databaseyes" value="yes"> Yes <br>
+          <input type="radio" name="db" id="databaseno" value="no"> No <br>
+          <input type="radio" name="db" id="databasena" value="na"> I don't care <br>
+          <input type="radio" name="db" id="databaseidk" value="idk"> I don't know <br>
+          <input type="submit" value="Submit"><br>
+        </form>
+        <form id="collaborationquestion" class="setpage">
+          Are you good at building consensus or collaboration? <br>
+          <input type="radio" name="collaboration" id="collaborationyes" value="yes"> Yes <br>
+          <input type="radio" name="collaboration" id="collaborationno" value="no"> No <br>
+          <input type="radio" name="collaboration" id="collaborationna" value="na"> I don't care <br>
+          <input type="submit" value="Submit"><br>
+        </form>
+        <form id="backquestion" class="setpage">
+          Do you enjoy working with back end languages like Python, Ruby, or PHP? <br>
+          <input type="radio" name="back" id="backyes" value="yes"> Yes <br>
+          <input type="radio" name="back" id="backno" value="no"> No <br>
+          <input type="radio" name="back" id="backna" value="na"> I don't care <br>
+          <input type="submit" value="Submit"><br>
+        </form>
+        <form id="frontquestion" class="setpage">
+          Do you like working with front end languages - HTML, CSS, and Javascript? <br>
+          <input type="radio" name="front" id="frontyes" value="yes"> Yes <br>
+          <input type="radio" name="front" id="frontno" value="no"> No <br>
+          <input type="radio" name="front" id="frontna" value="na"> I don't care <br>
+          <input type="submit" value="Submit"><br>
+        </form>
+        <form id="finaltally" class="setpage">
+          Are you ready to see your results? <br>
+          <input type="submit" value="Yes!"><br>
+        </form>
+        <div id="results"></div>
+        <div id="deepresults">
+        </div>
+        <div id="design">
+        </div>
+        <div id="qa">
+        </div>
+        <div id="db">
+        </div>
+        <div id="devops">
+        </div>
+        <div id="frontend">
+        </div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
+      </div> 
+      </div>
+      <div class="span6">
+        <h4> Article </h4>
+        <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+        <h4> Egg Foo Young </h4>
+        <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+      </div>
     </div>
-    <div id="design">
-    </div>
-    <div id="qa">
-    </div>
-    <div id="db">
-    </div>
-    <div id="devops">
-    </div>
-    <div id="frontend">
-    </div>
-    <canvas id="myChart" width="400" height="400"></canvas>
   </div>
-    <footer>
-    <!-- <ul>
-      <li class="nav">
-        <a href="https://www.linkedin.com/in/alisonacuna">
-        <img src="linkedin_48.png" alt="LinkedIn Logo" class="social-icon"></a>
-      </li>
-      <li class="nav">
-          <a href="https://github.com/alison-acuna">
-          <img src="github_48.png" alt="GitHub Logo" class="social-icon"></a>
-      </li>
-      <footer> -->
+  <footer>
+  <!-- <ul>
+    <li class="nav">
+      <a href="https://www.linkedin.com/in/alisonacuna">
+      <img src="linkedin_48.png" alt="LinkedIn Logo" class="social-icon"></a>
+    </li>
+    <li class="nav">
+        <a href="https://github.com/alison-acuna">
+        <img src="github_48.png" alt="GitHub Logo" class="social-icon"></a>
+    </li>
+    <footer> -->
 
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
-    <script src="program.js"></script>
-    <!-- <script src="Chart.js"></script> -->
-  </body>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
+<script src="program.js"></script>
+<!-- <script src="Chart.js"></script> -->
+</body>
 </html>
